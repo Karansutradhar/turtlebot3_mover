@@ -45,10 +45,12 @@ void gm::Mover::laserCallback(const sensor_msgs::LaserScan::ConstPtr& data) {
 
 gm::Mover::Mover(ros::NodeHandle node) {
     // LaserScan for ROS subscriber
-    ros::Subscriber laserSubscriber = node.subscribe("/scan", 1000, &Mover::laserCallback, this);
+    ros::Subscriber laserSubscriber = node.subscribe("/scan", 1000,
+      &Mover::laserCallback, this);
 
     // velocity topic on ROS publisher
-    ros::Publisher velocityPublisher = node.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
+    ros::Publisher velocityPublisher =
+      node.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
 
     // the looprate is 4hz
     ros::Rate rate(4);

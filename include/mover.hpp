@@ -52,11 +52,11 @@ class Mover {
      * @param node ROS Nodehandle
      * **/
     explicit Mover(ros::NodeHandle node);
-    
+
     /**
      * @brief Laserscan subscriber callback
      * @param planar laser range finder to scan single data
      * **/
     void laserCallback(const sensor_msgs::LaserScan::ConstPtr& data);
 };
-} // namespace gm
+}  // namespace gm
